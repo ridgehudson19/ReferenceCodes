@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JSON Example</title>
+</head>
+<body>
+
+	<ul id="people"></ul>
+
+	<script type="text/javascript">
+	/*
+	  var person = {
+		name:"Brad",
+		age:35,
+		address:{
+				street: "5 main st",
+				city: "Boston"
+		},
+		children:["Brianna", "Nicholas"]
+	  }
+	  
+	 // person = JSON.stringify(person);	JS to JSON
+	 // person = JSON.parse(person); JSON to JS
+	  
+	  
+	  //console.log(person.address.street);
+	  //console.log(person.children[1]);
+	  
+	  var people = [
+		{
+			name:"Brad",
+			age:35
+		},
+		{
+			name:"John",
+			age:40
+		},
+		{
+			name:"Sara",
+			age:25
+		}
+	  ]
+	  
+	  //console.log(people[1]);
+	  //console.log(people[1].age);
+	  
+	  var output ='';
+	  
+	  for(var i = 0;i < people.length;i++){
+			
+			output+= '<li>' + people[i].name + '</li>';
+			//console.log(people[i]);
+			//console.log(people[i].name);
+			//console.log(people[i].age);
+	  }
+	  
+	 document.getElementById('people').innerHTML = output;
+	 */
+	
+	/* FROM: https://www.w3schools.com/xml/xml_http.asp 
+		-XMLhttprequest is an object within your browser
+		-httprequest through js
+		-easier with library like jquery/axios
+		-just using javascript below*/
+	 var xhttp = new XMLHttpRequest();
+	 
+	 xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) { 
+			var response = JSON.parse(xhttp.responseText);
+			//console.log(response.people);
+			
+			//same as above
+			//console.log(JSON.parse(response).people);
+			
+			 var people = response.people;
+			 var output ='';
+	  
+			for(var i = 0;i < people.length;i++){
+			
+			output+= '<li>' + people[i].name + '</li>'; 
+			}
+	  
+			document.getElementById('people').innerHTML = output;
+			
+		}
+	};
+	
+	xhttp.open("GET", "people.json", true);
+	xhttp.send();
+	 
+	</script>
+</body>
+</html>

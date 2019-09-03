@@ -1,0 +1,239 @@
+<!-- DOCTYPE for HTML5, must be included -->
+<!DOCTYPE html> 
+
+
+<html>
+
+	<head>
+		<title> HTML5 Cheat Sheet </title>
+		<style> 
+			#heading{
+				color:red;
+			}
+		</style>
+	</head>
+	
+	<body>
+	
+		<!-- Headings -->
+		<h1 id="heading"> Headings </h1>
+		
+		<h1> &lt;H1&gt; </h1>
+		<h2> &lt;H2&gt;</h2>
+		<h3> &lt;H3&gt; </h3>
+		<h4> &lt;H4&gt; </h4>
+		<h5> &lt;H5&gt; </h5>
+		<h6> &lt;H6&gt; </h6>
+		
+		<!-- Paragraphs -->
+		<h1 id="heading"> Paragraphs </h1>
+		
+		<p> This is my example paragraph
+			that I want to be displayed
+			on my webpage 
+		</p>
+		
+		<p> This is my second example paragraph
+			that I want to be displayed
+			on my webpage 
+		</p>
+		
+		<!-- Inline Vs. Block level Elements -->
+		<h1 id="heading"> Inline Vs. Block level Elements </h1>
+		
+		<p>
+			 Inline
+			<ul>
+				<li>Does not start on new line</li>
+				<li>Takes only necessary width</li>
+				<li>&lt;span&gt;, &lt;img&gt;, &lt;a&gt;, &lt;strong&gt;, &lt;em&gt;</li>
+			</ul> 
+		</p>
+		
+		<p>
+			 Block Level
+			<ul>
+				<li>Starts on new line</li>
+				<li>Takes full width</li>
+				<li>&lt;div&gt;, &lt;h1&gt;-&lt;h6&gt;, &lt;p&gt;, &lt;form&gt;</li>
+			</ul>
+		</p>
+		 
+		<p> This paragraph is made from a <strong> Block Level Element Tag </strong>
+			and the text effects is caused by <em> Inline Element Tags </em>. 
+			
+			Other examples of Inline Element Tags are links opened
+			<a href="http://google.com">in the same window</a> 
+			or by 
+			<a href="http://google.com" target="_blank"> opening a new tab</a>	
+		</p>
+		
+		<!-- Lists (Unordered & Ordered)
+			*Unordered used for nav bar*--> 
+		<h1 id="heading"> Lists (Unordered & Ordered) </h1>
+		
+		<ul>
+			<li> Unordered List item 1</li>
+			<li> Unordered List item 2</li>
+			<li> Unordered List item 3</li>
+			<li> Unordered List item 4</li>
+		</ul>
+		
+		<ol>
+			<li> Ordered List item 1</li>
+			<li> Ordered List item 2</li>
+			<li> Ordered List item 3</li>
+			<li> Ordered List item 4</li>
+		</ol>
+		
+		<!-- Tables -->
+		<h1 id="heading"> Tables </h1>
+		
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Age</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Tom Smith</td>
+					<td>TomSmith@something.com</td>
+					<td>35</td>
+				</tr>
+				<tr>
+					<td>Bob Johnson</td>
+					<td>BobJohnson@something.com</td>
+					<td>45</td>
+				</tr>
+				<tr>
+					<td>Sara Williams</td>
+					<td>SaraWilliams@something.com</td>
+					<td>25</td>
+				</tr>
+			</tbody>
+		</table>
+		<br>
+		
+		<!-- Horizontal Rule --> 
+		<h1 id="heading"> Horizontal Rule </h1>
+		
+		<hr> 
+		<br>
+		
+		<!-- Forms --> 
+		<h1 id="heading"> Forms </h1>
+		
+		<form action="index.html" method ="POST">
+			<div>
+				<label>First Name</label>
+				<input type="text" name="firstName"
+				 placeholder ="Enter first name">
+			</div>
+			<br> 
+			<div>
+				<label>Last Name</label>
+				<input type="text" name="lastName">
+			</div>
+			<br>
+			<div>
+				<label>Email</label>
+				<input type="email" name="email">
+			</div>
+			<br>
+			<div>
+				<label>Message</label>
+				<textarea name = "message"> </textarea>
+			</div>
+			<br>
+			<div>
+				<label>Gender</label> 
+				<select name = "gender">
+					<option value="male">Male</option>
+					<option value="female">Female</option>
+					<option value="other">Other</option>
+				</select>
+			</div>
+			<br>
+			<div>
+				<label>Age:</label>
+				<input type="number" name ="age" value="30">
+			</div>
+			<br>
+			<div>
+				<label>Birthday:</label>
+				<input type="date" name ="birthday">
+			</div>
+			<br>
+			<input type="submit" name="submit" value="submit">
+		</form> 
+		<br>
+		
+		<!-- Buttons --> 
+		<h1 id="heading"> Buttons </h1>
+		
+		<button>Click Me</button> 
+		<br>
+		
+		<!-- Images -->
+		<h1 id="heading"> Images </h1>
+		
+		<a href="images/hudsontechnology.png">
+			<img src="images/hudsontechnology.png" alt="my image"
+			width="250" height="100">
+		</a>
+		<br>
+		
+		<img src="images/example.png" 
+		alt="example: alt text shows when image not found"> 
+		<br>
+		
+		<!-- Quotations -->
+		<h1 id="heading"> Quotations </h1>
+		
+		<blockquote cite="http://mycitedpage.com">
+			Here is an example of quotations
+		</blockquote>
+		
+		<p> 
+			The <abbr title="World Wide Web">WWW</abbr>
+		    is awesome
+		</p>
+		
+		<p>
+			<cite>HTML crash course</cite> By Ridge Hudson
+		</p>
+		
+		<!-- HTML5 Semantic Tags -->
+		<h1 id="heading"> HTML5 Semantic Tags </h1>
+		
+		<p>
+			HTML5 Semantic Tags include:
+			<ul>
+				<li>&lt;Main&gt;</li>
+				<li>&lt;Details&gt;</li>
+				<li>&lt;Header&gt;</li>
+				<li>&lt;Nav&gt;</li>
+				<li>&lt;Section&gt;</li>
+				<li>&lt;Article&gt;</li>
+				<li>&lt;Aside&gt;</li>
+				<li>&lt;Footer&gt;</li>
+			</ul>
+			
+			And are used like the image below
+			<br>
+			<a href="images/html5semantictags.png">
+				<img src="images/html5semantictags.png" 
+					 alt="HTML5 Semantic Tags">
+			</a>
+		</p>
+			
+		<a href="blog.html">Go to Example</a>
+		<br>
+		<br>
+		
+	</body>
+	
+</html>
