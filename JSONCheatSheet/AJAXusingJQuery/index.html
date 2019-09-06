@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Load More</title>
+	<script src="jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			var flag = 0;
+			var numInitPosts = 10;
+			var loadPerScroll = 5;
+			
+			function isMobileDevice() {
+				return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+			};
+			
+			
+			$.ajax({
+				type:"GET",
+				url: "get_data.php",
+				data:{
+					'offset':0,
+					'limit':numInitPosts
+				},
+				success: function(data){ 
+					$('body').append(data); 
+					flag+=numInitPosts;
+				}
+			});
+			
+			$(window).scroll(function() { 
+				var scrolltop = $(window).scrollTop();  
+		
+				if(isMobileDevice() == true){
+					scrolltop += 2;
+				}
+					
+				if(scrolltop >= $(document).height() - $(window).height()){
+					
+					$.ajax({
+						type:"GET",
+						url: "get_data.php",
+						data:{
+							'offset':flag,
+							'limit':loadPerScroll
+						},
+						success: function(data){ 
+							$('body').append(data); 
+							flag+=loadPerScroll;
+						}
+					});
+				}
+			});
+		});
+	</script>
+	<style type="text/css">
+		.blog-post{
+			border-bottom: solid 4px black;
+			margin-bottom:20px;
+		}
+		
+		.blog-post h1{
+			font-size:40px;
+		}
+		
+		.blog-post p{
+			font-size:30px;
+		}
+	</style>
+</head>
+<body> 
+</body>
+</html>
