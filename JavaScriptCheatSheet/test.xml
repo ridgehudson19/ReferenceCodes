@@ -1,0 +1,6 @@
+<? version="1.0" encoding="utf-8"?>
+<Customer>
+	<Name>Test Name</Name>
+	<Status>Active</Status>
+	<Points>25</Points>
+</Customer>

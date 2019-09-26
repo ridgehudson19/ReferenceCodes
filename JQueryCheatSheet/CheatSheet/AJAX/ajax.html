@@ -1,0 +1,120 @@
+<html>
+<head>
+	<script src = "../../../../jquery/jquery.js"> </script>
+	<title>jQuery Crash Course | AJAX</title>
+	  
+	<style>
+		body{ 
+			margin:0;
+			font-size:17px;
+			font-family:arial;
+			background:#f4f4f4;
+			line-height:1.5m;
+		}
+		header{
+			background:#333;
+			color:#fff;
+			padding:20px;
+			text-align:center;
+			border-bottom:4px #000 solid;
+			margin-bottom:10px;
+		}
+		#container{
+			width:90%;
+			margin:auto;
+			padding:10px;
+		}
+		.myClass{
+			color:blue;
+			background:black;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1> jQuery Crash Course - AJAX</h1>
+	</header> 
+	<div id="container"> 
+		<div id="result"></div>
+		<ul id="users"></ul>
+		<h3>Add Post</h3>
+		<form id="postForm" action="http://jsonplaceholder.typicode.com/posts">
+			<input type="text" id="title" placeholder="Title"><br>
+			<textarea placeholder="Body" id="body"></textarea><br>
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+	 
+	<script> 
+		$(document).ready(function(){
+			/* --- Load Function --- */
+			/*
+			// $('#result').load('test.html');
+			 
+			 $('#result').load('test.html', function(	// callback function to check if
+				responseTxt, statusTxt, xhr){			// retrieval was successful
+				if(statusTxt == "success"){
+					alert('It went fine');
+				} else if(statusTxt == "error"){
+					alert("Error: " + xhr.statusText);
+				}
+			 });
+			*/
+			
+			/* --- GET Method (same as load, just different method) --- */
+			/*
+			$.get('test.html', function(data){
+				$('#result').html(data);
+			});
+			*/
+			
+			/* --- load local JSON file of users into a list element --- */
+			// * using JSON method *
+			/*
+			$.getJSON('users.json', function(data){
+				$.each(data, function(i, user){
+					$('ul#users').append('<li>' + user.firstName + '</li>');
+				});
+			});
+			*/
+			
+			/* --- load third-party API JSON file of users into a list element --- */
+			// jsonplaceholder.typicode.com
+			// * using ajax method *
+			
+			/*
+			$.ajax({
+				method:'GET',
+				url: 'http://jsonplaceholder.typicode.com/posts',
+				dataType: 'json'
+			}).done(function(data){
+				console.log(data);
+				$.map(data, function(post, i){
+					$('#result').append('<h3>' + post.title +'</h3><p>' +
+										post.body + '</p>');
+				});
+			});
+			*/
+			
+			/* --- Post Form --- */
+			
+			$('#postForm').submit(function(e){
+				e.preventDefault();
+				
+				var title = $('#title').val();
+				var body = $('#body').val();
+				var url = $(this).attr('action');
+				
+				$.post(url, {title:title, body:body}).
+					done(function(data){ 
+						console.log('Post Saved');
+						console.log(data);
+						alert(data.title);
+					});
+			});
+			
+		});
+ 	</script> 
+</body>
+</html>
+

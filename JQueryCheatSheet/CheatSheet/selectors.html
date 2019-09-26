@@ -1,0 +1,104 @@
+<html>
+<head>
+	<script src = "../../../jquery/jquery.js"> </script>
+	<title>jQuery Crash Course | Selectors</title>
+	<style>
+		body{
+			font-size:17px;
+			font-family:arial;
+			background:#f4f4f4;
+			line-height:1.5m;
+		}
+		header{
+			background:#333;
+			color:#fff;
+			padding:20px;
+			text-align:center;
+			border-bottom:4px #000 solid;
+			margin-bottom:10px;
+		}
+		#container{
+			width:90%;
+			margin:auto;
+			padding:10px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1> jQuery Crash Course - Selectors</h1>
+	</header>
+	<div id="container">
+		<h1 id="heading1">Heading One</h1>
+		<p id="para1">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+			Quisque id lectus, condimentum sapien faucibus, bibendum
+			ligula. In hac habitasse platea dictumst. <span> Quisque 
+			ullamcorper</span> congue consequat. Lorem ipsum dolor sit 
+			amet, consectetur adipiscing elit.
+		</p>
+		<h1 class="heading2">Heading Two</h1>
+		<p class="para2">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+			Quisque id lectus, condimentum sapien faucibus, bibendum
+			ligula. In hac habitasse platea dictumst. <span> Quisque 
+			ullamcorper</span> congue consequat. Lorem ipsum dolor sit 
+			amet, consectetur adipiscing elit.
+		</p>
+		
+		<ul id="list">
+			<li>List Item</li>
+			<li>List Item</li>
+			<li>List Item</li>
+			<li>List Item</li>
+			<li>List Item</li>
+			<li>List Item</li>
+			<li>List Item</li>
+		</ul>
+		
+		<input type="button" value="Button 1">
+		<input type="submit" value="Submit">
+		<input type="text">
+		
+		<a href="http://google.com">Google</a>
+		<a href="http://yahoo.com">Yahoo</a>
+		
+	</div>
+	<script> 
+		/*selecting classes and ids*/
+		
+		//$('h1').hide(); 				hide all <h1>'s
+		
+		//$('#heading1').hide();		hides heading1 id
+		//$('h1#heading1').hide();		another way to write the above
+		
+		//$('.heading2').hide();		hides heading2 class 
+		//$('h1.heading2').hide();		another way to write the above
+		  
+		/*css examples using lists*/
+		//$('p span').css('color','red'); changes span p text color to red
+	
+		$('ul#list li:first').css('color','red');
+		$('ul#list li:last').css('color','green');
+		$('ul#list li:even').css('background','yellow');
+		$('ul#list li:odd').css('background','#ccc');
+		$('ul#list li:nth-child(3n)').css('list-style','none');
+		
+		/*selecting input types*/
+		//$(':button').hide();
+		//$(':submit').hide();
+		$(':text').hide();
+		
+		/*selecting an attribute and attribute values*/
+		$('[href]').css('color','red'); 
+		$('a[href="http://yahoo.com"]').css('color','green'); 
+		
+		/*select  everything (wildcard selector)*/
+		//$('*').hide();
+		
+		
+		  
+	</script>
+</body>
+</html>
+
