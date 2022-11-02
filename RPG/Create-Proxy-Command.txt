@@ -1,0 +1,12 @@
+1. Type the command CRTPRXCMD then hit F4 to bring the prompt up.
+
+
+2. Field definitions for prompt screen:
+Command - name of custom proxy command (Example: WS)
+Library - which library to store the customer proxy command
+
+Target command - name of command to run (Example: WRKSPLF)
+Target Library - library where command is found
+
+*This will allow you to type WS instead of WRKSPLF on the command line
+

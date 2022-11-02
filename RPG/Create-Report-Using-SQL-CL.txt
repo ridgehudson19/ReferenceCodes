@@ -1,0 +1,30 @@
+             PGM
+             DCL        VAR(&RECCOUNT) TYPE(*DEC) LEN(10)
+
+            /* RUNSQL     SQL('create table qtemp/table1dup as ( +
+                             select item item, count(*) count +
+                             from rhudson191/table2 +
+                             group by item) with no data') COMMIT(*NONE)*/
+            
+             
+             RUNSQL     SQL('create table qtemp/table1dup ( +
+                                item char(10),  +               
+                                count numeric(5))') COMMIT(*NONE)                
+                             
+             RUNSQL     SQL('insert into qtemp/table1dup  +
+                             select item,count(*) from rhudson191/table2 +
+                             group by item +
+                             having count(*)>1 +
+                             order by item') COMMIT(*NONE)
+
+             RTVMBRD    FILE(QTEMP/TABLE1DUP) NBRCURRCD(&RECCOUNT)
+
+             IF         COND(&RECCOUNT *GT 0) THEN(DO)
+             RUNQRY     QRYFILE((QTEMP/TABLE1DUP)) +
+                          OUTTYPE(*PRINTER)
+
+             RUNSQL     SQL('drop table qtemp/table1dup') +
+                        COMMIT(*NONE)
+             ENDDO
+
+             ENDPGM

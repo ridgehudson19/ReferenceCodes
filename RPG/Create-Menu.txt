@@ -1,0 +1,27 @@
+Create a menu
+1. STRSDA - option 2 (Design Menus)
+2. Choose Library/source file, and menu name
+3. Work with menu image and commands = Y, then ENTER
+4. Edit screen like a normal DDS screen
+5. Put asterick on 'selection or command' line to change DDS settings for the command line
+6. option F10 assigns program calls to menu selections
+7. Exit and save by F3, F3, ENTER
+8. Remove command line for user by doing CHGMNU command, then change CMDLIN to *NONE
+
+To compile a new menu:
+1. Copy the MNUDDS and MNUCMD into a library/source file
+2. Put option 17 on MNUCMD or MNUDDS file
+3. Exit and compile by F3, then ENTER
+
+two types of menus:
+1. display file menu (done by using STRSDA; steps above create display file menu)
+2. program menu
+
+creating a display file menu is quicker and easier but it is also limited.
+display file menus are only able to use numeric-user commands. (cannot have options like A or B)
+program menus allows for character-user commands and multi-page menus.
+Display file menus must follow a particular format from which you cannot deviate; 
+You cannot define your own function keys-these are defined for you and there's nothing you can do about them.
+
+Program menus are created differently. You need to create two objects yourself: a display file (*FILE) and a program (*PGM). When you're done, you run the Create Menu (CRTMNU) command to create the *MENU object that ties the display file and the program together.
+

@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "odbc": "^2.4.4"
+  }
+}

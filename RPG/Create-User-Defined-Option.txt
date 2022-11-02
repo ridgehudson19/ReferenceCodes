@@ -1,0 +1,8 @@
+A user define option works on:
+1. command line
+2. on the command line next to source files in WRKMBRPDM.
+
+A user defined option is created by:
+1. type command WRKMBRPDM
+2. hit F16 (Shift+F4)
+3. Hit F6 to create option
